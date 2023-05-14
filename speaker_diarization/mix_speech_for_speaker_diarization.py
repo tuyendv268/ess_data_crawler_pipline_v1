@@ -15,7 +15,7 @@ import json
 def get_utt(path):
     # utts = os.listdir(path)
     # utts = [os.path.join(path, utt) for utt in utts]
-    utts = glob(path+"/*/*.wav")
+    utts = glob(path+"/*.wav")
     return utts
 
 def add_silence(wav, duration) -> AudioSegment:
@@ -243,7 +243,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
 
     parser.add_argument('--config', default="mix_config.yml" ,type=str, help='path')
-    parser.add_argument('--input_path', default="datas/raws",type=str, help='path')
+    parser.add_argument('--input_path', default="youtube_datas",type=str, help='path')
     parser.add_argument('--random_state', default=42,type=int, help='path')
     parser.add_argument('--output_path', default="datas/simulated_datas",type=str, help='path')
     parser.add_argument('--num_process', default=1,type=int, help='path')
