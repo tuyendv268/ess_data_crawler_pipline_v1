@@ -47,7 +47,7 @@ model:
     num_spks: ${model.max_num_of_spks}
     soft_label_thres: ${model.soft_label_thres}
     labels: null
-    batch_size: 8
+    batch_size: 2
     emb_batch_size: ${model.emb_batch_size}
     shuffle: False
   
@@ -58,7 +58,7 @@ model:
     num_spks: ${model.max_num_of_spks}
     soft_label_thres: ${model.soft_label_thres}
     labels: null
-    batch_size: 8
+    batch_size: 2
     shuffle: False
     seq_eval_mode: False
 
@@ -102,7 +102,7 @@ model:
 
 trainer:
   devices: 1 # number of gpus (devices)
-  accelerator: cpu
+  accelerator: cuda
   max_epochs: 200
   max_steps: -1 # computed at runtime if not set
   num_nodes: 1
