@@ -7,8 +7,8 @@
 # {"audio_filepath": "/path/to/audio01.wav", "offset": 390.83, "duration": 13.45, "text": "-", "num_speakers": 2, "rttm_filepath": "/path/to/audio01.rttm"}
 name: "MultiscaleDiarDecoder" 
 sample_rate: 16000
-num_workers: 16
-batch_size: 16
+num_workers: 4
+batch_size: 8
 
 model: 
   diarizer:
@@ -102,7 +102,7 @@ model:
 
 trainer:
   devices: 1 # number of gpus (devices)
-  accelerator: cuda
+  accelerator: gpu
   max_epochs: 200
   max_steps: -1 # computed at runtime if not set
   num_nodes: 1
